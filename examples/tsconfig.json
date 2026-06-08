@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "paths": {
+      "zodbridge": ["../src/index.ts"],
+      "zodbridge/serialize": ["../src/serialize/index.ts"],
+      "zodbridge/resolver": ["../src/resolver/index.ts"],
+      "zodbridge/async": ["../src/async/index.ts"]
+    }
+  },
+  "include": ["./*.ts"]
+}

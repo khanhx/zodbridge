@@ -1,6 +1,6 @@
 {
   "name": "zodbridge",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Schema-first, decorator-free Zod-driven mapper: two-way entity <-> DTO mapping, JSON-safe serialize/deserialize, a dependency-aware memoizing resolver graph, and async select-driven mapping.",
   "type": "module",
   "license": "MIT",

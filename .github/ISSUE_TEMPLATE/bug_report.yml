@@ -1,0 +1,26 @@
+name: Bug report
+description: Report incorrect behavior with a reproduction
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Describe the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Smallest code snippet (schema + input + output) that shows it.
+      render: ts
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: zodbridge / zod / node versions
+      placeholder: "zodbridge 0.1.0, zod 4.1.5, node 22"
+    validations:
+      required: true

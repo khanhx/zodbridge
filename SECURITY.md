@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-The latest minor release line receives security fixes. zodbridge is pre-1.0;
+The latest minor release line receives security fixes. zodbridge-ts is pre-1.0;
 once 1.0 ships, the current major is supported.
 
 ## Reporting a Vulnerability
@@ -17,7 +17,7 @@ We aim to acknowledge within 72 hours and to ship a fix or mitigation promptly.
 
 ## Security-relevant design notes
 
-zodbridge sits at the DB-entity ↔ response-DTO boundary, so a few behaviors are
+zodbridge-ts sits at the DB-entity ↔ response-DTO boundary, so a few behaviors are
 security-relevant (see the README "Security" section):
 
 - `select` is **not** an authorization boundary — enforce field-level authz

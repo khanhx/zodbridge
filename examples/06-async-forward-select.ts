@@ -4,9 +4,9 @@
  * Run: `npx tsx examples/06-async-forward-select.ts`
  */
 import { z } from "zod";
-import { createMap, fromResolver } from "zodbridge";
-import { forwardAsync } from "zodbridge/async";
-import { createResolver } from "zodbridge/resolver";
+import { createMap, fromResolver } from "zodbridge-ts";
+import { forwardAsync } from "zodbridge-ts/async";
+import { createResolver } from "zodbridge-ts/resolver";
 
 const PostDto = z.object({
   id: z.string(),

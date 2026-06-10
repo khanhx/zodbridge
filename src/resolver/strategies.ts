@@ -40,7 +40,7 @@ export type Strategy<Fields, TAdapter, V> = (
  * every candidate skips, the field resolves to `undefined`.
  *
  * @example
- * import { strategies, SKIP } from "zodbridge/resolver";
+ * import { strategies, SKIP } from "zodbridge-ts/resolver";
  *
  * createResolver({
  *   adapter,

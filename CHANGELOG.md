@@ -1,4 +1,4 @@
-# zodbridge
+# zodbridge-ts
 
 ## 0.1.0
 

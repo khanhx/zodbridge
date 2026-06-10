@@ -1,8 +1,8 @@
-# zodbridge
+# zodbridge-ts
 
 [![CI](https://github.com/khanhx/zodbridge/actions/workflows/ci.yml/badge.svg)](https://github.com/khanhx/zodbridge/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/khanhx/zodbridge/branch/main/graph/badge.svg)](https://codecov.io/gh/khanhx/zodbridge)
-[![npm version](https://img.shields.io/npm/v/zodbridge.svg)](https://www.npmjs.com/package/zodbridge)
+[![npm version](https://img.shields.io/npm/v/zodbridge-ts.svg)](https://www.npmjs.com/package/zodbridge-ts)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 Schema-first, **decorator-free**, **Zod 4**-driven mapping toolkit for the
@@ -17,7 +17,7 @@ Four composable pillars, each available as its own sub-export:
 4. **Async mapping** (`forwardAsync`) — resolver-backed fields + a dynamic `select` set, validated with async Zod.
 
 ```bash
-npm install zodbridge zod
+npm install zodbridge-ts zod
 ```
 
 > **Zod 4 required.** `zod` is a peer dependency pinned to `^4`. The codec
@@ -52,7 +52,7 @@ produced from the source entity:
 - `{ to, from }` — explicit **both-directions** (reversible).
 
 ```ts
-import { createMap } from "zodbridge";
+import { createMap } from "zodbridge-ts";
 import { z } from "zod";
 
 const UserDto = z.object({
@@ -95,7 +95,7 @@ userMap.toCamelCase({ first_name: 1, post_tags: [{ tag_name: "x" }] });
 The same functions are exported standalone (and per-key variants too):
 
 ```ts
-import { toSnakeCase, toCamelCase, toSnakeKey, toCamelKey } from "zodbridge";
+import { toSnakeCase, toCamelCase, toSnakeKey, toCamelKey } from "zodbridge-ts";
 ```
 
 Notes:
@@ -115,7 +115,7 @@ JSON-safe round-trip driven by the schema. `serialize` converts rich values to
 JSON-safe plain values; `deserialize` rebuilds them and validates with Zod.
 
 ```ts
-import { serialize, deserialize } from "zodbridge/serialize";
+import { serialize, deserialize } from "zodbridge-ts/serialize";
 import { z } from "zod";
 
 const Event = z.object({ id: z.bigint(), at: z.date(), tally: z.map(z.string(), z.bigint()) });
@@ -140,7 +140,7 @@ fall back to alternate sources (`fallback`). Results are **memoized** (one fetch
 per field, even under `Promise.all`), and cycles are guarded.
 
 ```ts
-import { createResolver } from "zodbridge/resolver";
+import { createResolver } from "zodbridge-ts/resolver";
 
 interface Fields { orgId: string; org: { id: string; plan: string }; plan: string }
 interface Api { getOrg: (id: string) => Promise<{ id: string; plan: string }> }
@@ -187,8 +187,8 @@ over-exposure are caught at the boundary. Pass scalar dependency fields (with no
 DTO) via an optional `fields` object.
 
 ```ts
-import { createResolver } from "zodbridge/resolver";
-import { createMap } from "zodbridge";
+import { createResolver } from "zodbridge-ts/resolver";
+import { createMap } from "zodbridge-ts";
 import { z } from "zod";
 
 const userMap = createMap(z.object({ id: z.string(), name: z.string() }));
@@ -231,9 +231,9 @@ the resolver graph; an optional `select` set restricts which fields (and which
 resolver calls) run.
 
 ```ts
-import { createMap, fromResolver } from "zodbridge";
-import { forwardAsync } from "zodbridge/async";
-import { createResolver } from "zodbridge/resolver";
+import { createMap, fromResolver } from "zodbridge-ts";
+import { forwardAsync } from "zodbridge-ts/async";
+import { createResolver } from "zodbridge-ts/resolver";
 import { z } from "zod";
 
 const PostDto = z.object({
@@ -287,16 +287,16 @@ Object-level cross-field refines run only on a **full** select. If any
 
 | Import path                 | Exports |
 |-----------------------------|---------|
-| `zodbridge`          | `createMap`, `fromResolver`, `withDefault`, `forwardMany`, `safeForward`, `pick`, `omit`, `compose`, `toSnakeCase`/`toCamelCase`/`toKebabCase`/`toPascalCase`/`toConstantCase` (+ per-key), `serialize`, `deserialize`, `deserializeAsync`, errors, `VERSION` |
-| `zodbridge/serialize`| `serialize`, `deserialize`, `deserializeAsync`, `CodecError`, `AsyncSchemaError`, leaf transforms (incl. `setToArray`) |
-| `zodbridge/resolver` | `createResolver`, `strategies`, `SKIP`, `GraphContext`, types |
-| `zodbridge/async`    | `forwardAsync`, `normalizeSelect`, `UnknownSelectKeyError` |
+| `zodbridge-ts`          | `createMap`, `fromResolver`, `withDefault`, `forwardMany`, `safeForward`, `pick`, `omit`, `compose`, `toSnakeCase`/`toCamelCase`/`toKebabCase`/`toPascalCase`/`toConstantCase` (+ per-key), `serialize`, `deserialize`, `deserializeAsync`, errors, `VERSION` |
+| `zodbridge-ts/serialize`| `serialize`, `deserialize`, `deserializeAsync`, `CodecError`, `AsyncSchemaError`, leaf transforms (incl. `setToArray`) |
+| `zodbridge-ts/resolver` | `createResolver`, `strategies`, `SKIP`, `GraphContext`, types |
+| `zodbridge-ts/async`    | `forwardAsync`, `normalizeSelect`, `UnknownSelectKeyError` |
 
 ### Map ops & resolver extras
 
 ```ts
-import { createMap, compose, pick, withDefault } from "zodbridge";
-import { createResolver, strategies, SKIP } from "zodbridge/resolver";
+import { createMap, compose, pick, withDefault } from "zodbridge-ts";
+import { createResolver, strategies, SKIP } from "zodbridge-ts/resolver";
 
 const UserDto = z.object({ id: z.number(), name: z.string(), role: z.string() });
 const userMap = createMap(UserDto, {

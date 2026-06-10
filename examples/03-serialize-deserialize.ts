@@ -3,7 +3,7 @@
  * Run: `npx tsx examples/03-serialize-deserialize.ts`
  */
 import { z } from "zod";
-import { serialize, deserialize } from "zodbridge/serialize";
+import { serialize, deserialize } from "zodbridge-ts/serialize";
 
 const Event = z.object({
   id: z.bigint(),

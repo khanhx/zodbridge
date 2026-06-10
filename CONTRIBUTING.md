@@ -1,4 +1,4 @@
-# Contributing to zodbridge
+# Contributing to zodbridge-ts
 
 Thanks for helping out! This is a small, focused, zero-runtime-dependency library
 with a **100% test-coverage gate** — contributions must keep it green.

@@ -7,7 +7,7 @@
  * would be `null`).
  * Run: `npx tsx examples/05-smart-resolve-strategies.ts`
  */
-import { SKIP, createResolver, strategies } from "zodbridge/resolver";
+import { SKIP, createResolver, strategies } from "zodbridge-ts/resolver";
 
 interface Fields {
   reservationId: string;

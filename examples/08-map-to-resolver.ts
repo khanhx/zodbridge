@@ -5,7 +5,7 @@
  * Run: `npx tsx examples/08-map-to-resolver.ts`
  */
 import { z } from "zod";
-import { createMap } from "zodbridge";
+import { createMap } from "zodbridge-ts";
 
 // The map's schema defines BOTH the field types and the validation applied to
 // each resolver's output (unknown keys are stripped — over-exposure protection).

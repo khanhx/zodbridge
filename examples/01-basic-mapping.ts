@@ -3,7 +3,7 @@
  * Run: `npx tsx examples/01-basic-mapping.ts`
  */
 import { z } from "zod";
-import { createMap } from "zodbridge";
+import { createMap } from "zodbridge-ts";
 
 // The DTO schema is the source of truth for the output shape.
 const UserDto = z.object({

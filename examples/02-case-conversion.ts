@@ -3,7 +3,7 @@
  * Run: `npx tsx examples/02-case-conversion.ts`
  */
 import { z } from "zod";
-import { createMap, toSnakeCase, toCamelCase } from "zodbridge";
+import { createMap, toSnakeCase, toCamelCase } from "zodbridge-ts";
 
 const map = createMap(z.object({ id: z.number() }));
 

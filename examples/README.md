@@ -1,6 +1,6 @@
 # Examples
 
-Runnable use-cases for `zodbridge`. Each file is self-contained.
+Runnable use-cases for `zodbridge-ts`. Each file is self-contained.
 
 | File | Shows |
 |------|-------|
@@ -15,7 +15,7 @@ Runnable use-cases for `zodbridge`. Each file is self-contained.
 
 ## Run
 
-These import from the package name (`zodbridge`) exactly as a consumer would.
+These import from the package name (`zodbridge-ts`) exactly as a consumer would.
 In this repo they resolve to `../src` via `examples/tsconfig.json`.
 
 ```bash
@@ -24,5 +24,5 @@ npx tsx examples/01-basic-mapping.ts
 npx tsc -p examples/tsconfig.json
 ```
 
-In your own project, `npm install zodbridge zod` and the same imports work
+In your own project, `npm install zodbridge-ts zod` and the same imports work
 against the published package.

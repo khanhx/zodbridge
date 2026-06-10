@@ -4,7 +4,7 @@
  * Run: `npx tsx examples/07-map-ops-and-views.ts`
  */
 import { z } from "zod";
-import { createMap, withDefault, pick, omit, compose } from "zodbridge";
+import { createMap, withDefault, pick, omit, compose } from "zodbridge-ts";
 
 const UserDto = z.object({ id: z.number(), name: z.string(), role: z.string() });
 const userMap = createMap(UserDto, {

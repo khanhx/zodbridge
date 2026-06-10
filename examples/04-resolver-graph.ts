@@ -2,7 +2,7 @@
  * Resolver graph: memoized, dependency-aware lazy resolution over an adapter.
  * Run: `npx tsx examples/04-resolver-graph.ts`
  */
-import { createResolver } from "zodbridge/resolver";
+import { createResolver } from "zodbridge-ts/resolver";
 
 interface Fields {
   orgId: string;

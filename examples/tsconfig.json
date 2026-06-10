@@ -3,10 +3,10 @@
   "compilerOptions": {
     "noEmit": true,
     "paths": {
-      "zodbridge": ["../src/index.ts"],
-      "zodbridge/serialize": ["../src/serialize/index.ts"],
-      "zodbridge/resolver": ["../src/resolver/index.ts"],
-      "zodbridge/async": ["../src/async/index.ts"]
+      "zodbridge-ts": ["../src/index.ts"],
+      "zodbridge-ts/serialize": ["../src/serialize/index.ts"],
+      "zodbridge-ts/resolver": ["../src/resolver/index.ts"],
+      "zodbridge-ts/async": ["../src/async/index.ts"]
     }
   },
   "include": ["./*.ts"]

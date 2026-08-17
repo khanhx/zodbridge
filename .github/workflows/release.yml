@@ -29,7 +29,7 @@ jobs:
       - name: Build + test before publish
         run: npm run build && npm run test
       - name: Create version PR or publish
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
           # When changesets exist, this opens a "Version Packages" PR; once that
           # PR merges, the same action runs `publish` to npm.
